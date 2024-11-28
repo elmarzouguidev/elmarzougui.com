@@ -1,0 +1,30 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ factoryImport }}
+use Illuminate\Database\Eloquent\Model;
+use App\Traits\UuidGenerator;
+use App\Traits\GetModelByKeyName;
+
+class {{ class }} extends Model
+{
+    {{ factory }}
+    use UuidGenerator;
+    use GetModelByKeyName;
+
+
+
+
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'active' => 'boolean',
+        ];
+    }
+}
